@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SWP391_Group2_SE1506" />
+        <module name="SWP391-Group2-Project" />
       </profile>
     </annotationProcessing>
   </component>
