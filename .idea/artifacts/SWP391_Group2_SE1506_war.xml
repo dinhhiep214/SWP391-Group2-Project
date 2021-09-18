@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SWP391_Group2_SE1506:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SWP391_Group2_SE1506</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SWP391_Group2_SE1506.war">
+      <element id="artifact" artifact-name="SWP391_Group2_SE1506:war exploded" />
+    </root>
+  </artifact>
+</component>
