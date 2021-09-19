@@ -9,5 +9,8 @@
         <module name="SWP391_Group2_SE1506" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SWP391_Group2_SE1506" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
