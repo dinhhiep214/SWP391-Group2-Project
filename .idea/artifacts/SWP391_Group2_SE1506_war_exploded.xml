@@ -6,12 +6,16 @@
         <exploded>true</exploded>
         <module>SWP391_Group2_SE1506</module>
         <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="SWP391_Group2_SE1506" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:9.0.41" />
         </element>
       </element>
       <element id="directory" name="META-INF">
