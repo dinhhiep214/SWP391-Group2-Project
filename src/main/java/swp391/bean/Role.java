@@ -7,14 +7,9 @@ import java.sql.Date;
 
 @Getter
 @Setter
-public class Account {
-    private int accountId;
-    private int personId;
+public class Role {
     private int roleId;
-    private String phoneNumber;
-    private String email;
-    private String password;
-    private String status;
+    private String name;
     private Date createdDate;
     private Date updatedDate;
 }
