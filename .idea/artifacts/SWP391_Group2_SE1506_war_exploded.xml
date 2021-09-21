@@ -15,7 +15,7 @@
           <element id="module-output" name="SWP391_Group2_SE1506" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:9.0.41" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
           <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.16" />
         </element>
       </element>
