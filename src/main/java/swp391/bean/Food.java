@@ -13,6 +13,7 @@ public class Food {
     private String foodName;
     private String status;
     private String description;
+    private int rate;
     private Date createdDate;
     private Date updatedDate;
 }

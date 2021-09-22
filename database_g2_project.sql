@@ -77,14 +77,16 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 -- -----------------------------------------------------
--- Table `swp391_g2_project`.`shop_manager`
+-- Table `swp391_g2_project`.`shop`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `swp391_g2_project`.`shop` (
   `shop_id` INT NOT NULL AUTO_INCREMENT,
   `person_id` INT NOT NULL,
   `shop_name` INT NOT NULL,
   `status` VARCHAR(25) NULL DEFAULT 'inactive',
+  `address` VARCHAR(255) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `description` TEXT CHARACTER SET 'utf8' NULL DEFAULT NULL,
+  `rate` INT NULL DEFAULT NULL,
   `created_date` DATETIME NOT NULL,
   `updated_date` DATETIME NULL DEFAULT NULL,
   PRIMARY KEY (`shop_id`),
@@ -95,7 +97,7 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 -- -----------------------------------------------------
--- Table `swp391_g2_project`.`shop_manager`
+-- Table `swp391_g2_project`.`food`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `swp391_g2_project`.`food` (
   `food_id` INT NOT NULL AUTO_INCREMENT,
@@ -103,10 +105,82 @@ CREATE TABLE IF NOT EXISTS `swp391_g2_project`.`food` (
   `food_name` INT NOT NULL,
   `status` VARCHAR(25) NULL DEFAULT 'inactive',
   `description` TEXT CHARACTER SET 'utf8' NULL DEFAULT NULL,
+  `rate` INT NULL DEFAULT NULL,
   `created_date` DATETIME NOT NULL,
   `updated_date` DATETIME NULL DEFAULT NULL,
   PRIMARY KEY (`food_id`),
   FOREIGN KEY (`shop_id`) REFERENCES `swp391_g2_project`.`shop` (`shop_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------
+-- Table `swp391_g2_project`.`topic`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `swp391_g2_project`.`topic` (
+  `topic_id` INT NOT NULL AUTO_INCREMENT,
+  `title` INT NOT NULL,
+  `status` VARCHAR(25) NULL DEFAULT 'inactive',
+  `content` TEXT CHARACTER SET 'utf8' NULL DEFAULT NULL,
+  `rate` INT NULL DEFAULT NULL,
+  `created_date` DATETIME NOT NULL,
+  `updated_date` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`topic_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------
+-- Table `swp391_g2_project`.`topic_comment`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `swp391_g2_project`.`topic_comment` (
+  `topic_comment_id` INT NOT NULL AUTO_INCREMENT,
+  `topic_id` INT NOT NULL,
+  `status` VARCHAR(25) NULL DEFAULT 'inactive',
+  `content` TEXT CHARACTER SET 'utf8' NULL DEFAULT NULL,
+  `rate` INT NULL DEFAULT NULL,
+  `created_date` DATETIME NOT NULL,
+  `updated_date` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`topic_comment_id`),
+  FOREIGN KEY (`topic_id`) REFERENCES `swp391_g2_project`.`topic` (`topic_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------
+-- Table `swp391_g2_project`.`shop_comment`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `swp391_g2_project`.`shop_comment` (
+  `shop_comment_id` INT NOT NULL AUTO_INCREMENT,
+  `shop_id` INT NOT NULL,
+  `status` VARCHAR(25) NULL DEFAULT 'inactive',
+  `content` TEXT CHARACTER SET 'utf8' NULL DEFAULT NULL,
+  `rate` INT NULL DEFAULT NULL,
+  `created_date` DATETIME NOT NULL,
+  `updated_date` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`shop_comment_id`),
+  FOREIGN KEY (`shop_id`) REFERENCES `swp391_g2_project`.`shop` (`shop_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------
+-- Table `swp391_g2_project`.`food_comment`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `swp391_g2_project`.`food_comment` (
+  `food_comment_id` INT NOT NULL AUTO_INCREMENT,
+  `food_id` INT NOT NULL,
+  `status` VARCHAR(25) NULL DEFAULT 'inactive',
+  `content` TEXT CHARACTER SET 'utf8' NULL DEFAULT NULL,
+  `rate` INT NULL DEFAULT NULL,
+  `created_date` DATETIME NOT NULL,
+  `updated_date` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`food_comment_id`),
+  FOREIGN KEY (`food_id`) REFERENCES `swp391_g2_project`.`food` (`food_id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
