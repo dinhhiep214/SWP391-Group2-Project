@@ -7,9 +7,12 @@ import java.sql.Date;
 
 @Getter
 @Setter
-public class Role {
-    private int roleId;
-    private String name;
+public class Topic {
+    private int topicId;
+    private String title;
+    private String status;
+    private String content;
+    private int rate;
     private Date createdDate;
     private Date updatedDate;
 }
