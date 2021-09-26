@@ -1,4 +1,4 @@
-<!--<%&#45;&#45;<%@ page contentType="text/html;charset=UTF-8" language="java" %>&#45;&#45;%>-->
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 
 <head>
@@ -16,7 +16,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="resources/css/custom/form.css">
 
-    <title>Login | Food Review</title>
+    <title>Forgot Password | Food Review</title>
 
     <link rel="shortcut icon" href="resources/images/avatar.png">
 
@@ -37,42 +37,29 @@
                 <label>
                     <i class="fas fa-user fa-fw"></i>
                 </label>
-                <input type="text" class="form-control" placeholder="Employee Name" name="txtName" required/>
+                <input type="text" class="form-control" placeholder="Email" name="txtEmployeeCode" required/>
             </div>
-            <div class="form-group">
-                <label>
-                    <i class="fas fa-user fa-fw"></i>
-                </label>
-                <input type="text" class="form-control" placeholder="Phone Number" name="txtPhone" required/>
-            </div>
-            <div class="form-group">
-                <label>
-                    <i class="fas fa-user fa-fw"></i>
-                </label>
-                <input type="text" class="form-control" placeholder="Address" name="txtAddress" required/>
-            </div>
-            <div class="form-group">
-                <label>
-                    <i class="fas fa-key fa-fw"></i>
-                </label>
-                <input type="password" class="form-control" placeholder="Password" name="txtPassword" required/>
-            </div>
-            <div class="form-group">
-                <label>
-                    <i class="fas fa-key fa-fw"></i>
-                </label>
-                <input type="password" class="form-control" placeholder="Re-enter Password" name="txtRePassword" required/>
-            </div>
+
             <br>
             <div class="form-group">
                 <div class="col">
-                    <a href="index.html">
-                        <button type="submit" class="btn btn-sm">
-                            <i class="fas fa-sign-in-alt fa-fw mr-1"></i>Sign Up
+                    <a href="login.jsp">
+                        <button type="button" class="btn btn-sm">
+                            <i class="fas fa-sign-in-alt fa-fw mr-1"></i>Send
                         </button>
                     </a>
                 </div>
             </div>
+            <div class="form-group">
+                <div class="col">
+                    <a class="link-effect" href="#">
+                    </a>
+                    <a class="link-effect float-right" href="login.jsp">
+                        <i class="fas fa-question fa-fw mr-1"></i>Login
+                    </a><br/><br/>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

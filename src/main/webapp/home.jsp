@@ -1,4 +1,4 @@
-<!--<%@ page contentType="text/html;charset=UTF-8" language="java" %>-->
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -44,7 +44,7 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="home.html" class="logo">
+                    <a href="home.jsp" class="logo">
                         <img height="80px" width="120px" src="resources/images/home/logo.png">
                     </a>
                     <!-- ***** Logo End ***** -->
@@ -771,7 +771,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="logo">
-                    <a href="home.html"><img src="resources/images/home/logo.png" alt=""></a>
+                    <a href="home.jsp"><img src="resources/images/home/logo.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-4 col-xs-12">
