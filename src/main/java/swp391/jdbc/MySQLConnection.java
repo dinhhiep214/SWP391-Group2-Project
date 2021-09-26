@@ -9,7 +9,7 @@ public class MySQLConnection {
     private final String portNumber = "3306";
     private final String instance="";
     private final String userID = "root";
-    private final String password = "1234";
+    private final String password = "nmHieu0103";
 
     public Connection getConnection() throws Exception {
         String url = "jdbc:mysql://"+serverName+":"+portNumber + "/" +dbName;
