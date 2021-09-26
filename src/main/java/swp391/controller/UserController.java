@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Servlet implementation class UserController
  */
-@WebServlet(value = "/userAuthorization", urlPatterns = {"/userAuthorization"})
+@WebServlet(value = "/userAuthorization")
 public class UserController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
