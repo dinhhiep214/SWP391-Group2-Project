@@ -121,8 +121,8 @@ public class AccountDAO {
                 createdDate = resultSet.getDate("created_date");
                 updatedDate = resultSet.getDate("updated_date");
 
-                accountList.add(new Account(accountId, email, password, firstName, lastName,
-                        birthDay, gender, role, phoneNumber, address, status, createdDate, updatedDate));
+                accountList.add(new Account(accountId, email, password, firstName, lastName, role,
+                        birthDay, gender, phoneNumber, address, status, createdDate, updatedDate));
             }
 
             return accountList;
