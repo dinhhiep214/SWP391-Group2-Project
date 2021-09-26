@@ -7,25 +7,18 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Servlet implementation class UserController
  */
 @WebServlet(name = "userAuthorization", urlPatterns = {"/userAuthorization"})
 public class UserController extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UserController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
@@ -51,6 +44,7 @@ public class UserController extends HttpServlet {
                 break;
             }
             case "home":{
+                request.getRequestDispatcher("home.jsp").forward(request, response);
                 break;
             }
             case "adminDashboard":{
@@ -62,9 +56,7 @@ public class UserController extends HttpServlet {
         }
     }
 
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
@@ -75,12 +67,22 @@ public class UserController extends HttpServlet {
                 break;
             }
             case "signUp":{
+                try {
+                    signUp(request, response);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 break;
             }
-            case "changePass":{
+            case "changePassword":{
+                try {
+                    changePassword(request, response);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 break;
             }
-            case "resetPass":{
+            case "resetPassword":{
                 break;
             }
             case "verify":{
@@ -151,11 +153,86 @@ public class UserController extends HttpServlet {
         }
     }
 
-    private  void logout(HttpServletRequest request, HttpServletResponse response)
+    private void logout(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         HttpSession session = request.getSession();
         session.setAttribute("account", null);
         response.sendRedirect("userAuthorization?action=home");
     }
 
+    private void signUp(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDate localDate = LocalDate.now();
+        HttpSession session = request.getSession();
+        String action = request.getParameter("action");
+
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String rePassword = request.getParameter("rePassword");
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+//        Date birthDay = (Date) new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("birhtDay"));
+        boolean gender;
+        String sex = request.getParameter("gender");
+        if (sex.equals("Nam")) {
+            gender = false;
+        } else gender = true;
+        Date createdDate = Date.valueOf(dtf.format(localDate));
+
+        AccountDAO accountDAO = new AccountDAO();
+        if (!password.equals(rePassword)) {
+            request.setAttribute("rePassAlert", "Mật khẩu và Mật khẩu nhập lại không trùng nhau!");
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
+        } else {
+            Account accountCheck = accountDAO.findByEmail(email);
+            if (accountCheck == null) {
+                accountDAO.save(new Account(email, password, firstName, lastName,
+                        "Reviewer", gender, "active", createdDate));
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
+            if (accountCheck != null) {
+                request.setAttribute("emailUsed", "Email đã được sử dụng!");
+                request.getRequestDispatcher("signup.jsp").forward(request, response);
+            }
+        }
+    }
+
+    private void changePassword(HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        request.setCharacterEncoding("UTF-8");
+        AccountDAO accountDAO = new AccountDAO();
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String newPassword = request.getParameter("newPassword");
+        String reNewPassword = request.getParameter("reNewPassword");
+
+        Account account = accountDAO.findByEmail(email);
+        if (account != null && account.getPassword().equals(password)
+            && newPassword.equals(reNewPassword)) {
+            accountDAO.changePassword(account.getAccountId(), newPassword);
+            response.sendRedirect("change-password.jsp");
+        } else {
+            if (account == null || account.getPassword().equals(password)) {
+                request.setAttribute("messageAlert", "Email hoặc mật khẩu bị sai!");
+            }
+            if (!newPassword.equals(reNewPassword)) {
+                request.setAttribute("newPasswordAlert", "Mật khẩu và Mật khẩu nhập lại không trùng nhau!");
+            }
+            if (newPassword.equals(account.getPassword())) {
+                request.setAttribute("passwordAlert", "Mật khẩu mới và cũ giống nhau!");
+            }
+        }
+    }
+
+    private void resetPassword(HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        AccountDAO accountDAO = new AccountDAO();
+        String email = request.getParameter("email");
+        Account account = accountDAO.findByEmail(email);
+    }
 }

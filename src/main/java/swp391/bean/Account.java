@@ -40,4 +40,16 @@ public class Account {
         this.createdDate = createdDate;
         this.updatedDate = updatedDate;
     }
+
+    public Account(String email, String password, String firstName, String lastName, String role,
+                   boolean gender, String status, Date createdDate) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.role = role;
+        this.gender = gender;
+        this.status = status;
+        this.createdDate = createdDate;
+    }
 }

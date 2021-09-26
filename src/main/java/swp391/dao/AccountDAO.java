@@ -17,7 +17,7 @@ public class AccountDAO {
     private Statement statement;
     private ResultSet resultSet;
 
-    public boolean save(Account account) throws Exception {
+    public void save(Account account) throws Exception {
         connection = new MySQLConnection().getConnection();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDate localDate = LocalDate.now();
@@ -27,16 +27,12 @@ public class AccountDAO {
             preparedStatement.setString(2, account.getPassword());
             preparedStatement.setString(3, account.getFirstName());
             preparedStatement.setString(4, account.getLastName());
-            preparedStatement.setDate(5, account.getBirthDay());
-            preparedStatement.setBoolean(6, account.isGender());
-            preparedStatement.setString(7, account.getRole());
-            preparedStatement.setString(8, account.getPhoneNumber());
-            preparedStatement.setString(9, account.getAddress());
-            preparedStatement.setString(10, "active");
-            preparedStatement.setDate(11, Date.valueOf(dtf.format(localDate)));
+            preparedStatement.setBoolean(5, account.isGender());
+            preparedStatement.setString(6, account.getRole());
+            preparedStatement.setString(7, account.getStatus());
+            preparedStatement.setDate(8, account.getCreatedDate());
 
-            int result = preparedStatement.executeUpdate();
-            return result > 0;
+            preparedStatement.executeUpdate();
         } finally {
             if (connection != null) {
                 connection.close();
@@ -47,7 +43,7 @@ public class AccountDAO {
         }
     }
 
-    public boolean update(Account account) throws Exception {
+    public void update(Account account) throws Exception {
         connection = new MySQLConnection().getConnection();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDate localDate = LocalDate.now();
@@ -63,8 +59,7 @@ public class AccountDAO {
             preparedStatement.setDate(8, Date.valueOf(dtf.format(localDate)));
             preparedStatement.setInt(9, account.getAccountId());
 
-            int result = preparedStatement.executeUpdate();
-            return result > 0;
+            preparedStatement.executeUpdate();
         } finally {
             if (connection != null) {
                 connection.close();
@@ -75,14 +70,14 @@ public class AccountDAO {
         }
     }
 
-    public boolean delete(int accountId) throws Exception {
+    public void delete(int accountId) throws Exception {
         connection = new MySQLConnection().getConnection();
         try {
             preparedStatement = connection.prepareStatement("DELETE FROM account WHERE account_id = ?");
             preparedStatement.setInt(1, accountId);
 
-            int result = preparedStatement.executeUpdate();
-            return result > 0;
+            preparedStatement.executeUpdate();
+
         } finally {
             if (connection != null) {
                 connection.close();
@@ -219,15 +214,14 @@ public class AccountDAO {
         }
     }
 
-    public boolean changePassword(int accountId, String newPassword) throws Exception {
+    public void changePassword(int accountId, String newPassword) throws Exception {
         connection = new MySQLConnection().getConnection();
 
         try {
             preparedStatement = connection.prepareStatement("UPDATE account SET password = ? WHERE account_id = ?");
             preparedStatement.setString(1, newPassword);
             preparedStatement.setInt(2, accountId);
-            int result = preparedStatement.executeUpdate();
-            return result > 0;
+            preparedStatement.executeUpdate();
         } finally {
             if (connection != null) {
                 connection.close();
