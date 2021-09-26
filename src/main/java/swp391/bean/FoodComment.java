@@ -7,13 +7,11 @@ import java.sql.Date;
 
 @Getter
 @Setter
-public class Shop {
-    private int shopId;
-    private int personId;
-    private String shopName;
+public class FoodComment {
+    private int foodCommentId;
+    private int foodId;
     private String status;
-    private String address;
-    private String description;
+    private String content;
     private int rate;
     private Date createdDate;
     private Date updatedDate;
