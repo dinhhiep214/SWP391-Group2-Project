@@ -6,7 +6,6 @@
         <exploded>true</exploded>
         <module>SWP391_Group2_SE1506</module>
         <packaging>war</packaging>
-        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="root">
