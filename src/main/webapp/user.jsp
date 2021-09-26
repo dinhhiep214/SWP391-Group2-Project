@@ -1,9 +1,9 @@
-<!--<%&#45;&#45;<%@ page contentType="text/html;charset=UTF-8" language="java" %>&#45;&#45;%>-->
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Food Review | Topic Management</title>
+    <title>Food Review | User Management</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -52,11 +52,11 @@
                                                                         alt="Avatar" style="border-radius: 50%;">
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-                                <li><a class="dropdown-item" href="account.html">Account</a></li>
+                                <li><a class="dropdown-item" href="account.jsp">Account</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="login.html">Log Out</a></li>
+                                <li><a class="dropdown-item" href="login.jsp">Log Out</a></li>
                             </ul>
                         </div>
                         <!--//app-user-dropdown-->
@@ -75,7 +75,7 @@
         <div class="sidepanel-inner d-flex flex-column">
             <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
             <div class="app-branding" style="margin:auto;">
-                <a class="app-logo" href="index.html"><span class="logo-text" style="font-size: 27px;"><i>Food
+                <a class="app-logo" href="index.jsp"><span class="logo-text" style="font-size: 27px;"><i>Food
                                 Review</i></span></a>
             </div>
             <!--//app-branding-->
@@ -83,7 +83,7 @@
             <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
                 <ul class="app-menu list-unstyled accordion" id="menu-accordion">
                     <li class="nav-item ">
-                        <a class="nav-link  " href="index.html">
+                        <a class="nav-link  " href="index.jsp">
                                 <span class="nav-icon">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door"
                                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +100,7 @@
                     <!--//nav-item-->
 
                     <li class="nav-item">
-                        <a class="nav-link " href="user.html">
+                        <a class="nav-link active" href="employee.html">
                                 <span class="nav-icon">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-list"
                                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +120,7 @@
                     <!--//nav-item-->
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="topic.html">
+                        <a class="nav-link" href="topic.jsp">
                                 <span class="nav-icon">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-folder"
                                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -158,7 +158,7 @@
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-fuild">
 
-            <h1 class="app-page-title">Topic Management</h1>
+            <h1 class="app-page-title">User Management</h1>
             <div class="animated fadeIn">
 
                 <div class="row">
@@ -431,7 +431,7 @@
         <small class="copyright " style="color: black; ">© 2021 Copyright <i class="fas fa-heart "
                                                                              style="color: #fb866a; "></i> by <a
                 class="app-link "
-                href="index.html ">ams.building.com</a></small>
+                href="index.jsp ">ams.building.com</a></small>
 
     </div>
 </footer>

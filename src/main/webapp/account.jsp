@@ -1,16 +1,9 @@
-<!--<%&#45;&#45;-->
-<!--  Created by IntelliJ IDEA.-->
-<!--  User: HangNT-->
-<!--  Date: 9/14/2021-->
-<!--  Time: 10:44 PM-->
-<!--  To change this template use File | Settings | File Templates.-->
-<!--&#45;&#45;%>-->
-<!--<%@ page contentType="text/html;charset=UTF-8" language="java" %>-->
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Food Review| Home</title>
+    <title>Food Review | Profile</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -23,7 +16,7 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="resources/css/custom/portal.css">
-    <link id="theme-style" rel="stylesheet" href="resources/css/custom/footer.css">
+    <link rel="stylesheet" href="resources/css/custom/footer.css">
 
 </head>
 
@@ -52,11 +45,11 @@
                                                                         alt="Avatar" style="border-radius: 50%;">
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-                                <li><a class="dropdown-item" href="account.html">Account</a></li>
+                                <li><a class="dropdown-item" href="account.jsp">Account</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="login.html">Log Out</a></li>
+                                <li><a class="dropdown-item" href="login.jsp">Log Out</a></li>
                             </ul>
                         </div>
                         <!--//app-user-dropdown-->
@@ -75,7 +68,7 @@
         <div class="sidepanel-inner d-flex flex-column">
             <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
             <div class="app-branding" style="margin:auto;">
-                <a class="app-logo" href="index.html"><span class="logo-text" style="font-size: 27px;"><i>Food
+                <a class="app-logo" href="index.jsp"><span class="logo-text" style="font-size: 27px;"><i>Food
                                 Review</i></span></a>
             </div>
             <!--//app-branding-->
@@ -83,7 +76,7 @@
             <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
                 <ul class="app-menu list-unstyled accordion" id="menu-accordion">
                     <li class="nav-item ">
-                        <a class="nav-link active " href="index.html">
+                        <a class="nav-link active " href="index.jsp">
                                 <span class="nav-icon">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door"
                                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +93,7 @@
                     <!--//nav-item-->
 
                     <li class="nav-item">
-                        <a class="nav-link" href="user.html">
+                        <a class="nav-link" href="user.jsp">
                                 <span class="nav-icon">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-list"
                                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +113,7 @@
                     <!--//nav-item-->
 
                     <li class="nav-item">
-                        <a class="nav-link" href="topic.html">
+                        <a class="nav-link" href="topic.jsp">
                                 <span class="nav-icon">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-folder"
                                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -156,142 +149,195 @@
 <!--//app-header-->
 
 <div class="app-wrapper">
-
     <div class="app-content pt-3 p-md-3 p-lg-4">
-        <div class="container-fuild">
 
-            <h1 class="app-page-title">Dashboard</h1>
-
-            <div class="row g-4 mb-4">
-                <div class="col-6 col-lg-3">
-                    <div class="app-card app-card-stat shadow-sm h-100">
-                        <div class="app-card-body p-3 p-lg-4">
-                            <h4 class="stats-type mb-1">Apartment</h4>
-                            <div class="stats-figure">12,628</div>
-                        </div>
-                        <!--//app-card-body-->
-                        <a class="app-card-link-mask" href="#"></a>
-                    </div>
-                    <!--//app-card-->
-                </div>
-                <!--//col-->
-
-                <div class="col-6 col-lg-3">
-                    <div class="app-card app-card-stat shadow-sm h-100">
-                        <div class="app-card-body p-3 p-lg-4">
-                            <h4 class="stats-type mb-1">Resident</h4>
-                            <div class="stats-figure">2,250</div>
-                        </div>
-                        <!--//app-card-body-->
-                        <a class="app-card-link-mask" href="#"></a>
-                    </div>
-                    <!--//app-card-->
-                </div>
-                <!--//col-->
-                <div class="col-6 col-lg-3">
-                    <div class="app-card app-card-stat shadow-sm h-100">
-                        <div class="app-card-body p-3 p-lg-4">
-                            <h4 class="stats-type mb-1">Employee</h4>
-                            <div class="stats-figure">23</div>
-                        </div>
-                        <!--//app-card-body-->
-                        <a class="app-card-link-mask" href="#"></a>
-                    </div>
-                    <!--//app-card-->
-                </div>
-                <!--//col-->
-                <div class="col-6 col-lg-3">
-                    <div class="app-card app-card-stat shadow-sm h-100">
-                        <div class="app-card-body p-3 p-lg-4">
-                            <h4 class="stats-type mb-1">Department</h4>
-                            <div class="stats-figure">6</div>
-                        </div>
-                        <!--//app-card-body-->
-                        <a class="app-card-link-mask" href="#"></a>
-                    </div>
-                    <!--//app-card-->
-                </div>
-                <!--//col-->
-            </div>
-            <!--//row-->
-            <div class="row g-4 mb-4">
-                <div class="col-12 col-lg-6">
-                    <div class="app-card app-card-chart h-100 shadow-sm">
-                        <div class="app-card-header p-3">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col-auto">
-                                    <h4 class="app-card-title">Line Chart Example</h4>
-                                </div>
-                            </div>
-                            <!--//row-->
-                        </div>
-                        <!--//app-card-header-->
-                        <div class="app-card-body p-3 p-lg-4">
-                            <div class="mb-3 d-flex">
-                                <select class="form-select form-select-sm ms-auto d-inline-flex w-auto">
-                                    <option value="1" selected>This week</option>
-                                    <option value="2">Today</option>
-                                    <option value="3">This Month</option>
-                                    <option value="3">This Year</option>
-                                </select>
-                            </div>
-                            <div class="chart-container">
-                                <canvas id="canvas-linechart"></canvas>
-                            </div>
-                        </div>
-                        <!--//app-card-body-->
-                    </div>
-                    <!--//app-card-->
-                </div>
-                <!--//col-->
-                <div class="col-12 col-lg-6">
-                    <div class="app-card app-card-chart h-100 shadow-sm">
-                        <div class="app-card-header p-3">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col-auto">
-                                    <h4 class="app-card-title">Bar Chart Example</h4>
-                                </div>
-                            </div>
-                            <!--//row-->
-                        </div>
-                        <!--//app-card-header-->
-                        <div class="app-card-body p-3 p-lg-4">
-                            <div class="mb-3 d-flex">
-                                <select class="form-select form-select-sm ms-auto d-inline-flex w-auto">
-                                    <option value="1" selected>This week</option>
-                                    <option value="2">Today</option>
-                                    <option value="3">This Month</option>
-                                    <option value="3">This Year</option>
-                                </select>
-                            </div>
-                            <div class="chart-container">
-                                <canvas id="canvas-barchart"></canvas>
-                            </div>
-                        </div>
-                        <!--//app-card-body-->
-                    </div>
-                    <!--//app-card-->
-                </div>
-                <!--//col-->
-
-            </div>
-            <!--//row-->
-        </div>
-        <!--//container-fluid-->
+        <h1 class="app-page-title">My Account</h1>
     </div>
+    <div class="container">
+
+
+        <div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
+            <div class="app-card-header p-3 border-bottom-0">
+                <div class="row align-items-center gx-3">
+                    <div class="col-auto">
+                        <div class="app-icon-holder">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person"
+                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                            </svg>
+                        </div>
+                        <!--//icon-holder-->
+
+                    </div>
+                    <!--//col-->
+                    <div class="col-auto">
+                        <h4 class="app-card-title">Profile</h4>
+                    </div>
+                    <!--//col-->
+                </div>
+                <!--//row-->
+            </div>
+            <!--//app-card-header-->
+            <div class="app-card-body px-4 w-100">
+                <div class="item border-bottom py-3">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <div class="item-label mb-2"><strong>Photo</strong></div>
+                            <div class="item-data"><img class="profile-image" src="resources/images/users/hangnt.png"
+                                                        alt="Avatar" style="border-radius: 50%;"></div>
+                        </div>
+                        <!--//col-->
+                        <div class="col text-end">
+                            <a class="btn-sm app-btn-secondary" href="#">Change</a>
+                        </div>
+                        <!--//col-->
+                    </div>
+                    <!--//row-->
+                </div>
+                <!--//item-->
+                <div class="item border-bottom py-3">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <div class="item-label"><strong>Name</strong></div>
+                            <div class="item-data">Nguyễn Thúy Hằng</div>
+                        </div>
+                        <!--//col-->
+                        <div class="col text-end">
+                            <a class="btn-sm app-btn-secondary" href="#">Change</a>
+                        </div>
+                        <!--//col-->
+                    </div>
+                    <!--//row-->
+                </div>
+                <!--//item-->
+                <div class="item border-bottom py-3">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <div class="item-label"><strong>Email</strong></div>
+                            <div class="item-data">hangnt16499@gmail.com</div>
+                        </div>
+                        <!--//col-->
+                        <div class="col text-end">
+                            <a class="btn-sm app-btn-secondary" href="#">Change</a>
+                        </div>
+                        <!--//col-->
+                    </div>
+                    <!--//row-->
+                </div>
+                <!--//item-->
+                <div class="item border-bottom py-3">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <div class="item-label"><strong>DOB</strong></div>
+                            <div class="item-data">
+                                16/04/1999
+                            </div>
+                        </div>
+                        <!--//col-->
+                        <div class="col text-end">
+                            <a class="btn-sm app-btn-secondary" href="#">Change</a>
+                        </div>
+                        <!--//col-->
+                    </div>
+                    <!--//row-->
+                </div>
+                <!--//item-->
+                <div class="item border-bottom py-3">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <div class="item-label"><strong>Address</strong></div>
+                            <div class="item-data">
+                                Hà Nội
+                            </div>
+                        </div>
+                        <!--//col-->
+                        <div class="col text-end">
+                            <a class="btn-sm app-btn-secondary" href="#">Change</a>
+                        </div>
+                        <!--//col-->
+                    </div>
+                    <!--//row-->
+                </div>
+                <!--//item-->
+                <!--//item-->
+                <div class="item border-bottom py-3">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <div class="item-label"><strong>Home Town</strong></div>
+                            <div class="item-data">
+                                Nam Định
+                            </div>
+                        </div>
+                        <!--//col-->
+                        <div class="col text-end">
+                            <a class="btn-sm app-btn-secondary" href="#">Change</a>
+                        </div>
+                        <!--//col-->
+                    </div>
+                    <!--//row-->
+                </div>
+                <!--//item-->
+                <!--//item-->
+                <div class="item border-bottom py-3">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <div class="item-label"><strong>Role</strong></div>
+                            <div class="item-data">
+                                Administrator
+                            </div>
+                        </div>
+                        <!--//col-->
+                        <div class="col text-end">
+                            <a class="btn-sm app-btn-secondary" href="#">Change</a>
+                        </div>
+                        <!--//col-->
+                    </div>
+                    <!--//row-->
+                </div>
+                <!--//item-->
+                <!--//item-->
+                <div class="item border-bottom py-3">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <div class="item-label"><strong>Password</strong></div>
+                            <div class="item-data">
+                                *******
+                            </div>
+                        </div>
+                        <!--//col-->
+                        <div class="col text-end">
+                            <a class="btn-sm app-btn-secondary" href="#">Change</a>
+                        </div>
+                        <!--//col-->
+                    </div>
+                    <!--//row-->
+                </div>
+                <!--//item-->
+            </div>
+            <!--//app-card-body-->
+            <div class="app-card-footer p-4 mt-auto">
+            </div>
+            <!--//app-card-footer-->
+
+        </div>
+        <!--//row-->
+
+    </div>
+    <!--//container-fluid-->
     <!--//app-content-->
 
-</div>
-<footer class="footer">
-    <div class="container text-center py-3">
-        <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-        <small class="copyright" style="color: black;">© 2021 Copyright <i class="fas fa-heart"
-                                                                           style="color: #fb866a;"></i> by <a
-                class="app-link" href="index.html">food.review.com</a></small>
+    <footer class="footer">
+        <div class="container text-center py-3">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright" style="color: black;">© 2021 Copyright <i class="fas fa-heart"
+                                                                               style="color: #fb866a;"></i> by <a
+                    class="app-link"
+                    href="index.jsp">ams.building.com</a></small>
 
-    </div>
-</footer>
-<!--//app-footer-->
+        </div>
+    </footer>
+    <!--//app-footer-->
 
 </div>
 <!--//app-wrapper-->
@@ -301,13 +347,8 @@
 <script src="resources/plugins/popper.min.js"></script>
 <script src="resources/plugins/bootstrap/js/bootstrap.min.js"></script>
 
-<!-- Charts JS -->
-<script src="resources/plugins/chart.js/chart.min.js"></script>
-<script src="resources/js/custom/index-charts.js"></script>
-
 <!-- Page Specific JS -->
 <script src="resources/js/custom/app.js"></script>
-
 
 </body>
 
