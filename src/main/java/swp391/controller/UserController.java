@@ -138,18 +138,18 @@ public class UserController extends HttpServlet {
 
             if (account == null || !account.getPassword().equals(password)) {
                 session.setAttribute("loginError", "Sai tên đăng nhập hoặc mật khẩu");
-                response.sendRedirect("UserController?action=login");
+                response.sendRedirect("userAuthorization?action=login");
             } else {
                 session.setAttribute("loginError", null);
                 session.setAttribute("account", account);
 
                 session.setMaxInactiveInterval(60 * 60 * 2);
-                response.sendRedirect("UserController?action=authorization");
+                response.sendRedirect("userAuthorization?action=authorization");
                 return;
             }
         } catch (Exception e) {
             session.setAttribute("loginError", "Sai tên đăng nhập hoặc mật khẩu");
-            response.sendRedirect("UserController?action=login");
+            response.sendRedirect("userAuthorization?action=login");
         }
     }
 
